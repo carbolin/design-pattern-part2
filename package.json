@@ -9,7 +9,7 @@
     "start": "concurrently npm:start:*"
   },
   "keywords": [],
-  "author": "",
+  "author": "carbolin",
   "license": "ISC",
   "dependencies": {
     "@types/node": "^14.0.23",
