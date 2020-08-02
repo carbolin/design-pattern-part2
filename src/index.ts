@@ -8,11 +8,20 @@ import { ImageView } from "./adapter/image-view";
 import { VividFilter } from "./adapter/vivid-filter";
 import { CaramelFilter } from "./adapter/avaFilter/caramel-filter";
 import { CaramelAdapter } from "./adapter/caramel-adapter";
+import { EmailClient } from "./adapter/exercise/email-client";
+import { YahooProvider } from "./adapter/exercise/yahoo-provider";
+import { GmailProvider } from "./adapter/exercise/gmail-provider";
+import { GmailClient } from "./adapter/exercise/gmail/gmail-client";
 
 
 // Adapter pattern Exercise
 
-
+const emailClient = new EmailClient();
+const yahoo = new YahooProvider();
+const gmail = new GmailProvider(new GmailClient());
+emailClient.add(yahoo);
+emailClient.add(gmail)
+emailClient.getEmails();
 
 
 // Adapter pattern
