@@ -1,6 +1,10 @@
 # Mosh Files
 exercise-solution/
 
+# JSON Files
+package-lock.json
+tsconfig.json
+
 # Logs
 logs
 *.log
