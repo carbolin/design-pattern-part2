@@ -12,16 +12,25 @@ import { EmailClient } from "./adapter/exercise/email-client";
 import { YahooProvider } from "./adapter/exercise/yahoo-provider";
 import { GmailProvider } from "./adapter/exercise/gmail-provider";
 import { GmailClient } from "./adapter/exercise/gmail/gmail-client";
-import { Stream }  from './decorator/stream'; 
+import { Stream } from './decorator/stream';
 import { CloudSTream } from "./decorator/cloud-stream";
 import { Encryptor } from "./decorator/encryptor";
 import { Compressor } from "./decorator/compressor";
 import { Editor } from "./decorator/exercise/editor";
+import { NotificationService } from "./facade/notification-service";
+
+
+
+// Facade Pattern
+
+const service = new NotificationService();
+service.send('Hello World', 'target');
+
 
 // Decorator Pattern Exercise
 
-const editor = new Editor();
-editor.openProject();
+// const editor = new Editor();
+// editor.openProject();
 
 
 // Decorator Pattern
