@@ -12,19 +12,39 @@ import { EmailClient } from "./adapter/exercise/email-client";
 import { YahooProvider } from "./adapter/exercise/yahoo-provider";
 import { GmailProvider } from "./adapter/exercise/gmail-provider";
 import { GmailClient } from "./adapter/exercise/gmail/gmail-client";
+import { Stream }  from './decorator/stream'; 
+import { CloudSTream } from "./decorator/cloud-stream";
+import { Encryptor } from "./decorator/encryptor";
+import { Compressor } from "./decorator/compressor";
+
+// Decorator Pattern Exercise
 
 
-// Adapter pattern Exercise
 
-const emailClient = new EmailClient();
-const yahoo = new YahooProvider();
-const gmail = new GmailProvider(new GmailClient());
-emailClient.add(yahoo);
-emailClient.add(gmail)
-emailClient.getEmails();
+// Decorator Pattern
+
+function storeCreditCard(stream: Stream) {
+
+    stream.write('1234-1234-1234-1234');
+}
+
+storeCreditCard(new CloudSTream());
+storeCreditCard(new Compressor(new CloudSTream()));
+storeCreditCard(new Encryptor(new CloudSTream()));
 
 
-// Adapter pattern
+
+// Adapter Pattern Exercise
+
+// const emailClient = new EmailClient();
+// const yahoo = new YahooProvider();
+// const gmail = new GmailProvider(new GmailClient());
+// emailClient.add(yahoo);
+// emailClient.add(gmail)
+// emailClient.getEmails();
+
+
+// Adapter Pattern
 
 // const image = new Image();
 // const vividFilter = new VividFilter();
