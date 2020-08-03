@@ -16,22 +16,24 @@ import { Stream }  from './decorator/stream';
 import { CloudSTream } from "./decorator/cloud-stream";
 import { Encryptor } from "./decorator/encryptor";
 import { Compressor } from "./decorator/compressor";
+import { Editor } from "./decorator/exercise/editor";
 
 // Decorator Pattern Exercise
 
+const editor = new Editor();
+editor.openProject();
 
 
 // Decorator Pattern
 
-function storeCreditCard(stream: Stream) {
+// function storeCreditCard(stream: Stream) {
 
-    stream.write('1234-1234-1234-1234');
-}
+//     stream.write('1234-1234-1234-1234');
+// }
 
-storeCreditCard(new CloudSTream());
-storeCreditCard(new Compressor(new CloudSTream()));
-storeCreditCard(new Encryptor(new CloudSTream()));
-
+// storeCreditCard(new CloudSTream());
+// storeCreditCard(new Compressor(new CloudSTream()));
+// storeCreditCard(new Encryptor(new CloudSTream()));
 
 
 // Adapter Pattern Exercise
@@ -53,6 +55,7 @@ storeCreditCard(new Encryptor(new CloudSTream()));
 
 // const imageView = new ImageView(image);
 // imageView.previewImage(camelAdapter);
+
 
 // Composite Pattern Exercise
 
