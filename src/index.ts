@@ -18,13 +18,20 @@ import { Encryptor } from "./decorator/encryptor";
 import { Compressor } from "./decorator/compressor";
 import { Editor } from "./decorator/exercise/editor";
 import { NotificationService } from "./facade/notification-service";
+import { TwitterService } from "./facade/exercise/twitter-service";
+
+// Facade Pattern Exercise
+
+const service = new TwitterService('myApp', 'abc123');
+const tweets = service.gettingRecentTweets();
+console.log(tweets);
 
 
 
 // Facade Pattern
 
-const service = new NotificationService();
-service.send('Hello World', 'target');
+// const service = new NotificationService();
+// service.send('Hello World', 'target');
 
 
 // Decorator Pattern Exercise
