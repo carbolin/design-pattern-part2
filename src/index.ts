@@ -19,13 +19,25 @@ import { Compressor } from "./decorator/compressor";
 import { Editor } from "./decorator/exercise/editor";
 import { NotificationService } from "./facade/notification-service";
 import { TwitterService } from "./facade/exercise/twitter-service";
+import { PointService } from "./flyweight/point-service";
+import { PointIconFactory } from "./flyweight/point-icon-factory";
+
+
+
+// Flyweight Pattern
+const factory = new PointIconFactory();
+const service = new PointService(factory);
+const points = service.getPoints();
+
+for (const point of points)
+    point.draw();
+    
 
 // Facade Pattern Exercise
 
-const service = new TwitterService('myApp', 'abc123');
-const tweets = service.gettingRecentTweets();
-console.log(tweets);
-
+// const service = new TwitterService('myApp', 'abc123');
+// const tweets = service.gettingRecentTweets();
+// console.log(tweets);
 
 
 // Facade Pattern
