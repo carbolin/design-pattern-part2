@@ -21,6 +21,22 @@ import { NotificationService } from "./facade/notification-service";
 import { TwitterService } from "./facade/exercise/twitter-service";
 import { PointService } from "./flyweight/point-service";
 import { PointIconFactory } from "./flyweight/point-icon-factory";
+import { SonyTv } from "./bridge/sony-tv";
+import { AdvancedRemoteControl } from "./bridge/advanced-remote-control";
+import { SamsungTv } from "./bridge/samsung-tv";
+
+
+
+// Bridge Pattern
+
+
+const sonyTv = new SonyTv();
+const samsungTv = new SamsungTv();
+const control = new AdvancedRemoteControl(samsungTv);
+control.turnOn();
+control.setChannel(2);
+control.setChannel(5);
+control.turnOff();
 
 
 // Flyweight Pattern Exercise
