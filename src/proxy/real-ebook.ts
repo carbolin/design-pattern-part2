@@ -1,12 +1,12 @@
 import { Ebook } from "./ebook";
 
-export class RealEbook implements Ebook{
+export class RealEbook implements Ebook {
 
-    constructor(public fileName: string) {
+    constructor(public readonly fileName: string) {
 
         this.load();
     }
-  
+
     private load(): void {
 
         console.log('Loading the ebook', this.fileName);
@@ -17,5 +17,4 @@ export class RealEbook implements Ebook{
         console.log('Showing the ebook', this.fileName);
     }
 
-   
 }

@@ -15,6 +15,6 @@ export class Library {
             this.ebooks.get(fileName)?.show();
 
         else console.log('Ebook with ', fileName, 'does not exit');
-
     }
+
 }

@@ -1,6 +1,6 @@
 export interface Ebook {
-    
-    fileName: string;
+
+    readonly fileName: string;
 
     show(): void;
 

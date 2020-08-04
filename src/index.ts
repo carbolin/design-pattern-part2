@@ -27,6 +27,7 @@ import { SamsungTv } from "./bridge/samsung-tv";
 import { Library } from "./proxy/library";
 import { RealEbook } from "./proxy/real-ebook";
 import { EbookProxy } from "./proxy/proxy-ebook";
+import { LoggingEbookProxy } from "./proxy/logging-ebook-proxy";
 
 
 
@@ -35,8 +36,8 @@ import { EbookProxy } from "./proxy/proxy-ebook";
 const lib = new Library();
 const fileNames: string[] = ['a', 'b', 'c'];
 
-for(const fileName of fileNames )
-    lib.add(new EbookProxy(fileName));
+for (const fileName of fileNames)
+    lib.add(new LoggingEbookProxy(fileName));
 
 lib.openEbook('a');
 
