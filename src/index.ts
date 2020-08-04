@@ -24,19 +24,31 @@ import { PointIconFactory } from "./flyweight/point-icon-factory";
 import { SonyTv } from "./bridge/sony-tv";
 import { AdvancedRemoteControl } from "./bridge/advanced-remote-control";
 import { SamsungTv } from "./bridge/samsung-tv";
+import { Library } from "./proxy.ts/library";
+import { Ebbok } from "./proxy.ts/ebook";
 
 
+
+// Proxy Pattern
+
+const lib = new Library();
+const fileNames: string[] = ['a', 'b', 'c'];
+
+for(const fileName of fileNames )
+    lib.add(new Ebbok(fileName));
+
+lib.openEbook('a');
 
 // Bridge Pattern
 
 
-const sonyTv = new SonyTv();
-const samsungTv = new SamsungTv();
-const control = new AdvancedRemoteControl(samsungTv);
-control.turnOn();
-control.setChannel(2);
-control.setChannel(5);
-control.turnOff();
+// const sonyTv = new SonyTv();
+// const samsungTv = new SamsungTv();
+// const control = new AdvancedRemoteControl(samsungTv);
+// control.turnOn();
+// control.setChannel(2);
+// control.setChannel(5);
+// control.turnOff();
 
 
 // Flyweight Pattern Exercise
