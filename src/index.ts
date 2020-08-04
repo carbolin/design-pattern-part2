@@ -24,8 +24,9 @@ import { PointIconFactory } from "./flyweight/point-icon-factory";
 import { SonyTv } from "./bridge/sony-tv";
 import { AdvancedRemoteControl } from "./bridge/advanced-remote-control";
 import { SamsungTv } from "./bridge/samsung-tv";
-import { Library } from "./proxy.ts/library";
-import { Ebbok } from "./proxy.ts/ebook";
+import { Library } from "./proxy/library";
+import { RealEbook } from "./proxy/real-ebook";
+import { EbookProxy } from "./proxy/proxy-ebook";
 
 
 
@@ -35,9 +36,10 @@ const lib = new Library();
 const fileNames: string[] = ['a', 'b', 'c'];
 
 for(const fileName of fileNames )
-    lib.add(new Ebbok(fileName));
+    lib.add(new EbookProxy(fileName));
 
 lib.openEbook('a');
+
 
 // Bridge Pattern
 

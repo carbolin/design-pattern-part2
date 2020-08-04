@@ -1,10 +1,10 @@
-import { Ebbok } from "./ebook";
+import { Ebook } from "./ebook";
 
 export class Library {
 
-    private ebooks: Map<string, Ebbok> = new Map<string, Ebbok>();
+    private ebooks: Map<string, Ebook> = new Map<string, Ebook>();
 
-    public add(ebook: Ebbok): void {
+    public add(ebook: Ebook): void {
 
         this.ebooks.set(ebook.fileName, ebook)
     }
