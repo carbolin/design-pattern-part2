@@ -23,15 +23,18 @@ import { PointService } from "./flyweight/point-service";
 import { PointIconFactory } from "./flyweight/point-icon-factory";
 
 
+// Flyweight Pattern Exercise
+
 
 // Flyweight Pattern
-const factory = new PointIconFactory();
-const service = new PointService(factory);
-const points = service.getPoints();
 
-for (const point of points)
-    point.draw();
-    
+// const factory = new PointIconFactory();
+// const service = new PointService(factory);
+// const points = service.getPoints();
+
+// for (const point of points)
+//     point.draw();
+
 
 // Facade Pattern Exercise
 
